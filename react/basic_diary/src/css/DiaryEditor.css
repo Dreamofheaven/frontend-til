@@ -1,0 +1,31 @@
+.diaryEditor {
+  text-align: center;
+  padding: 30px;
+  height: 500px;
+}
+.author-box input { 
+  width: 70vh;
+  height: 5vh;
+  margin-top: 30px;
+}
+.content-box textarea{
+  width: 70vh;
+  height: 40vh;
+  margin-top: 30px;
+  resize: none;
+}
+.bottom {
+  width: 70vh;
+  display: inline-flex;
+  justify-content: end;
+  gap: 30px;
+  margin-top: 30px;
+}
+.emotion-box select {
+  width: 50px;
+  height: 30px;
+}
+.diary-submit button {
+  width: 200px;
+  height: 30px;
+}
