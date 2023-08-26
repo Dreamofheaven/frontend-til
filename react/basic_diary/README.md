@@ -29,19 +29,11 @@
       <li>배열을 이용하여 react의 list에 아이템을 동적으로 수정하기</li>
     </ul>
 
+```javascript
+setData(data.map((item) => item.id === targetId ? {...item, content: newContent} : item)
+```
+
 <h3>Point 2. React Lifecycle과 API</h3>
 <h3>Point 3. React App 프로처럼 성능 최적화하기 with 도구 사용</h3>
 <h3>Point 4. React 컴포넌트 트리에 전역 데이터 공급하기</h3>
 
-
-
-
-<style>
-  /* .list-box{
-    border-radius: 10px;
-    background-color: black;
-    opacity: 0.3;
-    color: white;
-    padding: 10px;
-  } */
-</style>
