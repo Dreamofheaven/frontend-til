@@ -1,10 +1,6 @@
 import { useState, useRef } from "react";
-import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import LandingPage from "./pages/LandingPage";
-import DiaryEditor from "./pages/DiaryEditor";
-import DiaryList from "./pages/DiaryList";
-import RecordPage from "./pages/RecordPage";
-import Footer from "./components/Footer";
+import DiaryEditor from "./components/DiaryEditor";
+import DiaryList from "./components/DiaryList";
 
 function App() {
   const [data, setData] = useState([])
@@ -37,23 +33,13 @@ function App() {
     )
   }
 
-  console.log(window.location.pathname)
   return (
     <div>
-    <Router>
-      <Routes>
-        <Route path='/' element={<LandingPage />} exact />
-        <Route path='/diary' element={<DiaryList />} />
-        <Route path='/create' element={<DiaryEditor />} />
-        <Route path='/record' element={<RecordPage />} />
-      </Routes>
-      {(window.location.pathname !== '/')  && <Footer/> }
-    </Router>
+      <DiaryEditor onCreate={onCreate} />
+      <DiaryList diaryList={data} onDelete={onDelete} onUpdate={onUpdate} /> 
     </div>
   );
 }
 
-/* <DiaryEditor onCreate={onCreate} />
-<DiaryList diaryList={data} onDelete={onDelete} onUpdate={onUpdate} />  */
 
 export default App;

@@ -1,8 +1,6 @@
 body {
+  background: url(../public/image/back.jpg) no-repeat center;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -25,9 +23,33 @@ code {
   font-style: normal;
 }
 
+h1 {
+  font-family: "YeongdeokSea";
+}
+p {
+  font-family: 'S-CoreDream-3Light';
+}
+
 /* RGB */
 :root {
   --main-color: #636ecd;
   --sub-color: #ffe55c;
   --third-color: #C8E4D8; 
 }
+
+/* 버튼 스타일 통일*/
+button {
+  border: 0;
+  border-radius: 20px;
+  font-family: 'S-CoreDream-3Light';
+  font-weight: 900;
+  background-color: #ffe55c;
+  color: grey;
+  /* font-size: 3vh; */
+}
+button:hover {
+  background-color: white;
+  color: #ffe55c;
+  cursor: pointer;
+}
+

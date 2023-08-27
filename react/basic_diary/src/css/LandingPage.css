@@ -8,7 +8,6 @@ body {
 
 /* 메인 로고 */
 .main-box-logo h1 {
-  font-family: "YeongdeokSea";
   color: #fff7e3;
   font-size: 12vh;
   margin-top: 30vh;
@@ -18,20 +17,14 @@ body {
 .main-box-button button {
   width: 40vh;
   height: 8vh;
-  border: 0;
+  font-size: 3vh;
+  /* border: 0;
   border-radius: 20px;
   font-family: 'S-CoreDream-3Light';
-  font-size: 3vh;
   font-weight: 900;
   background-color: #ffe55c;
-  color: grey;
+  color: grey; */
 }
-.main-box-button button:hover {
-  background-color: white;
-  color: #ffe55c;
-  cursor: pointer;
-}
-
 
 /* 인용구 */
 .quote-box {
@@ -42,7 +35,3 @@ body {
   font-family: "YeongdeokSea";
   color: var(--third-color);
 }
-
-/* .footer {
-  display: none;
-} */
