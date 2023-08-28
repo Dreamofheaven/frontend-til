@@ -5,4 +5,8 @@
   background-color: gainsboro;
   padding: 5vh;
   border-radius: 20px;
+  margin-bottom: 5vh;
+}
+.item-button button{
+  margin-right: 10px;
 }

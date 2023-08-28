@@ -1,4 +1,13 @@
 .diaryList {
   margin-top: 20vh;
   text-align: center;
+  margin-bottom: 20vh;
+}
+
+/* 스크롤 */
+.diaryListBox {
+  width: 113vh;
+  height: 500px;
+  margin: 0 auto;
+  overflow-y: scroll;
 }

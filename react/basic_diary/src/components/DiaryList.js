@@ -9,7 +9,7 @@ function DiaryList({ diaryList, onDelete, onUpdate }) {
         <h1>일기 리스트</h1>
         <p>{diaryList.length}개의 일기가 있다.</p>
       </div>
-      <div>
+      <div className='diaryListBox'>
         {diaryList.map((item) => (
           <DiaryItem key={item.id} {...item} onDelete={onDelete} onUpdate={onUpdate} />
         ))}

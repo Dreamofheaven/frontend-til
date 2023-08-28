@@ -43,7 +43,7 @@ function DiaryItem({ id, author, content, emotion, created_at, onDelete, onUpdat
           <p>{content}</p>
         )}
       </div>
-      <div>
+      <div className='item-button'>
         {isEdit ? (
           <>
             <button onClick={handleQuitEdit}>수정 취소</button>
