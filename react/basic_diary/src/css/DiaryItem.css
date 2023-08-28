@@ -1,0 +1,8 @@
+.diaryItem {
+  width: 100vh;
+  margin: 0 auto;
+  text-align: left;
+  background-color: gainsboro;
+  padding: 5vh;
+  border-radius: 20px;
+}

@@ -42,7 +42,7 @@ function DiaryEditor({ onCreate }) {
       <h1>오늘의 일기</h1>
       <div className='author-box'>
         <input ref={authorInput} name="author" value={state.author} placeholder='작성자' onChange={handleChangeState} />
-      </div>
+      </div> 
       <div className='content-box'>
         <textarea ref={contentInput} name="content" value={state.content} placeholder='내용' onChange={handleChangeState} />
       </div>

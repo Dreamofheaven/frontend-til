@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import '../css/DiaryItem.css'
 
 function DiaryItem({ id, author, content, emotion, created_at, onDelete, onUpdate }) {
 
@@ -25,7 +26,7 @@ function DiaryItem({ id, author, content, emotion, created_at, onDelete, onUpdat
   }
   
   return (
-    <div>
+    <div className='diaryItem'>
       <div key={id}>
         <p>작성자 : { author } | 감정 점수 : { emotion } | </p>
         <p>{new Date(created_at).toLocaleString()}</p>
