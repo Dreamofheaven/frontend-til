@@ -1,11 +1,20 @@
-import { useState, useRef, useEffect, useMemo } from "react";
+import { useRef, useEffect, useMemo, useCallback, useReducer } from "react";
 import DiaryEditor from "./components/DiaryEditor";
 import DiaryList from "./components/DiaryList";
-// import Lifecycle from "./Lifecycle";
+
+const reducer = (state, action) => {
+  switch(action.type){
+    case 'INIT':
+      
+  }
+}
 
 
 function App() {
-  const [data, setData] = useState([])
+  // const [data, setData] = useState([])
+  
+  const [data, dispatch] = useReducer(reducer, [])
+
   const dataId = useRef(0)
 
   const getData = async()=> {
@@ -26,7 +35,8 @@ function App() {
     getData()
   }, [])
 
-  const onCreate = (author, content, emotion) => {
+  const onCreate = useCallback(
+    (author, content, emotion) => {
     const created_at = new Date().getTime()
     const newItem = {
       author,
@@ -36,22 +46,22 @@ function App() {
       id: dataId.current,
     }
     dataId.current += 1
-    setData([newItem, ...data])
-  }
+    setData((data) => [newItem, ...data])
+  },[])
 
-  const onDelete = (targetId) => {
-    console.log(`${targetId}가 삭제되었습니다.✈`)
-    const newDiaryList = data.filter((item) => item.id !== targetId)
-    setData(newDiaryList)
-  }
+  const onDelete = useCallback((targetId) => {
+    // console.log(`${targetId}가 삭제되었습니다.✈`)
+    setData(data => data.filter((item) => item.id !== targetId))
+  },[])
 
-  const onUpdate = (newContent, targetId) => {
+  const onUpdate = useCallback((newContent, targetId) => {
     setData(
-      data.map((item) => item.id === targetId ? {...item, content: newContent} : item
+      data => data.map((item) => item.id === targetId ? {...item, content: newContent} : item
       )
     )
-  }
+  },[])
 
+  // 함수로 사용하는 것이 아니라, 값으로 사용해야 한다. 
   const diaryRecord = useMemo(() => {
     console.log('일기 분석 시작')
 
@@ -67,6 +77,8 @@ function App() {
   return (
     <div>
       {/* <Lifecycle/> */}
+      {/* <OptimizeTest /> */}
+      {/* <OptimizeTest2 /> */}
       <DiaryEditor onCreate={onCreate} />
       <div>전체 일기 : {data.length}</div>
       <div>기분 좋은 일기 개수 : {goodCount}</div>

@@ -61,8 +61,9 @@ setData(data.map((item) => item.id === targetId ? {...item, content: newContent}
     <h4>🚩useEffect를 이용하여 컴포넌트 Mount 시점에 API를 호출하고, 해당 API의 결과값을 일기 데이터의 초기값으로 이용하기</h4>
 
 <h2>Point 3. React App 프로처럼 성능 최적화하기 with 도구 사용</h2>
+  <h3>Memoization을 이용한 최적화</h3>
   <h3>1. useMemo</h3>
-
+ 
   <h3>2. React.memo</h3>
   
   <h3>3. useCallback</h3>

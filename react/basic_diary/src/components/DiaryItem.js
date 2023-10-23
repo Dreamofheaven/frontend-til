@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../css/DiaryItem.css'
 
 function DiaryItem({ id, author, content, emotion, created_at, onDelete, onUpdate }) {
+
+  useEffect(() => {
+    console.log(`${id}번 째 아이템 렌더!`)
+  })
 
   // 수정 중인지 아닌지 불리언상태로 값을 저장
   const [isEdit, setIsEdit] = useState(false)
@@ -15,7 +19,7 @@ function DiaryItem({ id, author, content, emotion, created_at, onDelete, onUpdat
     }
   }
   
-  const handleQuitEdit = () => {
+  const handleQuitEdit = () => { 
     toggleIsEdit()
     setLocalChange(content)
   }
@@ -60,4 +64,4 @@ function DiaryItem({ id, author, content, emotion, created_at, onDelete, onUpdat
   )
 }
 
-export default DiaryItem
+export default React.memo(DiaryItem)
